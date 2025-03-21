@@ -1,3 +1,30 @@
+
+
+#include <iostream>
+#include <curl/curl.h>
+#include "libxml/HTMLparser.h"
+#include "libxml/xpath.h"
+
+// std::string get_request(std::string url) { ... }
+
+int main() {
+    // initialize curl globally
+    curl_global_init(CURL_GLOBAL_ALL);
+
+    // download the target HTML document 
+    // and print it
+    std::string html_document = get_request("https://www.scrapingcourse.com/ecommerce/");
+    std::cout << html_document;
+
+    // scraping logic...
+
+    // free up the global curl resources
+    curl_global_cleanup();
+
+    return 0;
+}
+
+
 std::string get_request(std::string url) {
     // initialize curl locally
     CURL *curl = curl_easy_init();
@@ -18,3 +45,4 @@ std::string get_request(std::string url) {
 
     return result;
 }
+
