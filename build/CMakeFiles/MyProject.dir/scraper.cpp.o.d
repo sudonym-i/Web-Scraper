@@ -148,11 +148,7 @@ CMakeFiles/MyProject.dir/scraper.cpp.o: \
  /usr/include/c++/13/bits/locale_facets.tcc \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
- /usr/include/c++/13/bits/istream.tcc /usr/include/c++/13/fstream \
- /usr/include/c++/13/bits/codecvt.h \
- /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
- /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
- /usr/include/c++/13/bits/fstream.tcc \
+ /usr/include/c++/13/bits/istream.tcc \
  /home/isaac/vcpkg/installed/x64-linux/include/curl/curl.h \
  /home/isaac/vcpkg/installed/x64-linux/include/curl/curlver.h \
  /home/isaac/vcpkg/installed/x64-linux/include/curl/system.h \
@@ -188,29 +184,4 @@ CMakeFiles/MyProject.dir/scraper.cpp.o: \
  /home/isaac/vcpkg/installed/x64-linux/include/curl/options.h \
  /home/isaac/vcpkg/installed/x64-linux/include/curl/header.h \
  /home/isaac/vcpkg/installed/x64-linux/include/curl/websockets.h \
- /home/isaac/vcpkg/installed/x64-linux/include/curl/mprintf.h \
- /home/isaac/vcpkg/installed/x64-linux/include/libxml/HTMLparser.h \
- /home/isaac/vcpkg/installed/x64-linux/include/libxml/xmlversion.h \
- /home/isaac/vcpkg/installed/x64-linux/include/libxml/xmlexports.h \
- /home/isaac/vcpkg/installed/x64-linux/include/libxml/parser.h \
- /home/isaac/vcpkg/installed/x64-linux/include/libxml/tree.h \
- /home/isaac/vcpkg/installed/x64-linux/include/libxml/xmlstring.h \
- /home/isaac/vcpkg/installed/x64-linux/include/libxml/xmlmemory.h \
- /home/isaac/vcpkg/installed/x64-linux/include/libxml/xmlregexp.h \
- /home/isaac/vcpkg/installed/x64-linux/include/libxml/dict.h \
- /home/isaac/vcpkg/installed/x64-linux/include/libxml/hash.h \
- /home/isaac/vcpkg/installed/x64-linux/include/libxml/valid.h \
- /home/isaac/vcpkg/installed/x64-linux/include/libxml/xmlerror.h \
- /home/isaac/vcpkg/installed/x64-linux/include/libxml/list.h \
- /home/isaac/vcpkg/installed/x64-linux/include/libxml/xmlautomata.h \
- /home/isaac/vcpkg/installed/x64-linux/include/libxml/entities.h \
- /home/isaac/vcpkg/installed/x64-linux/include/libxml/encoding.h \
- /usr/include/iconv.h \
- /home/isaac/vcpkg/installed/x64-linux/include/libxml/xmlIO.h \
- /home/isaac/vcpkg/installed/x64-linux/include/libxml/SAX2.h \
- /home/isaac/vcpkg/installed/x64-linux/include/libxml/threads.h \
- /home/isaac/vcpkg/installed/x64-linux/include/libxml/xpath.h \
- /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_uninitialized.h \
- /usr/include/c++/13/bits/stl_vector.h \
- /usr/include/c++/13/bits/stl_bvector.h \
- /usr/include/c++/13/bits/vector.tcc
+ /home/isaac/vcpkg/installed/x64-linux/include/curl/mprintf.h
