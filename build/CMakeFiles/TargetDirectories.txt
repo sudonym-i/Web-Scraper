@@ -1,0 +1,3 @@
+/home/isaac/gitclones/webCrawler/build/CMakeFiles/MyProject.dir
+/home/isaac/gitclones/webCrawler/build/CMakeFiles/edit_cache.dir
+/home/isaac/gitclones/webCrawler/build/CMakeFiles/rebuild_cache.dir
