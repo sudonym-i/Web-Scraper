@@ -98,18 +98,18 @@ CMakeFiles/webcrawl.dir/scraper.cpp.s: cmake_force
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/isaac/gitclones/webCrawler/scraper.cpp -o CMakeFiles/webcrawl.dir/scraper.cpp.s
 
 CMakeFiles/webcrawl.dir/object.cpp.o: CMakeFiles/webcrawl.dir/flags.make
-CMakeFiles/webcrawl.dir/object.cpp.o: /home/isaac/gitclones/webCrawler/object.cpp
+CMakeFiles/webcrawl.dir/object.cpp.o: object.cpp
 CMakeFiles/webcrawl.dir/object.cpp.o: CMakeFiles/webcrawl.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/isaac/gitclones/webCrawler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/webcrawl.dir/object.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/webcrawl.dir/object.cpp.o -MF CMakeFiles/webcrawl.dir/object.cpp.o.d -o CMakeFiles/webcrawl.dir/object.cpp.o -c /home/isaac/gitclones/webCrawler/object.cpp
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/webcrawl.dir/object.cpp.o -MF CMakeFiles/webcrawl.dir/object.cpp.o.d -o CMakeFiles/webcrawl.dir/object.cpp.o -c /home/isaac/gitclones/webCrawler/build/object.cpp
 
 CMakeFiles/webcrawl.dir/object.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/webcrawl.dir/object.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/isaac/gitclones/webCrawler/object.cpp > CMakeFiles/webcrawl.dir/object.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/isaac/gitclones/webCrawler/build/object.cpp > CMakeFiles/webcrawl.dir/object.cpp.i
 
 CMakeFiles/webcrawl.dir/object.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/webcrawl.dir/object.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/isaac/gitclones/webCrawler/object.cpp -o CMakeFiles/webcrawl.dir/object.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/isaac/gitclones/webCrawler/build/object.cpp -o CMakeFiles/webcrawl.dir/object.cpp.s
 
 # Object files for target webcrawl
 webcrawl_OBJECTS = \

@@ -13,7 +13,7 @@ size_t WriteCallback(void *contents, size_t size, size_t nmemb, std::string *out
 
 std::string *breakpoints(std::string &html_content, const char start[IND_SIZE], const char end[IND_SIZE]);
 
-std::string *scrape(int argc, char* argv[], const char start[IND_SIZE], const char end[IND_SIZE]) {
+std::string *scrape(int argc, const char *argv, const char start[IND_SIZE], const char end[IND_SIZE]) {
     
     // Initialize curl globally
     CURL *curl;
@@ -26,7 +26,7 @@ std::string *scrape(int argc, char* argv[], const char start[IND_SIZE], const ch
 
     if(curl) {
         // Set the URL to fetch
-        std::string url = argv[1];
+        std::string url = argv;
         curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
 
         // Set the callback function to write the response data into a string
@@ -40,6 +40,7 @@ std::string *scrape(int argc, char* argv[], const char start[IND_SIZE], const ch
         
         if(res != CURLE_OK) {
             std::cerr << "curl_easy_perform() failed: " << curl_easy_strerror(res) << std::endl;
+            delete parsed;
             return nullptr;
         } else {
             // Output the HTML content of the page
@@ -47,7 +48,6 @@ std::string *scrape(int argc, char* argv[], const char start[IND_SIZE], const ch
         }
         // Clean up LOCAL
         curl_easy_cleanup(curl);
-        delete parsed;
     }
     // Clean up curl globally
     delete html_content;
