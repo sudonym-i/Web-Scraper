@@ -5,13 +5,15 @@
 
 //points that detemine what char to start and end reads at
 //for example <a> , </a>
-const char START = '>';
-const char END = '<';
+const int IND_SIZE = 16;
+const char START[IND_SIZE] = "sy";
+const char END[IND_SIZE] = "<";
+
+bool equal_str(char *one, const char two[IND_SIZE]);
 
 size_t WriteCallback(void *contents, size_t size, size_t nmemb, std::string *output);
-void set_points(char &start, char &end);
-std::string *breakpoints(std::string &html_content, const char start, const char end);
 
+std::string *breakpoints(std::string &html_content, const char start[IND_SIZE], const char end[IND_SIZE]);
 
 int main(int argc, char* argv[]) {
     
@@ -36,17 +38,20 @@ int main(int argc, char* argv[]) {
         // Perform the request
         res = curl_easy_perform(curl);
         // Check if the request was successful
+        std::string *parsed = breakpoints(*html_content, START, END);
+        
         if(res != CURLE_OK) {
             std::cerr << "curl_easy_perform() failed: " << curl_easy_strerror(res) << std::endl;
         } else {
             // Output the HTML content of the page
-            std::cout << *breakpoints(*html_content, START, END) << std::endl;
+            std::cout << *parsed << std::endl;
         }
-        // Clean up curl
+        // Clean up LOCAL
         curl_easy_cleanup(curl);
+        delete parsed;
     }
-
     // Clean up curl globally
+    delete html_content;
     curl_global_cleanup();
     return 0;
 }
@@ -59,13 +64,13 @@ size_t WriteCallback(void *contents, size_t size, size_t nmemb, std::string *out
 }
 
 
-std::string *breakpoints(std::string &html_content, const char start, const char end){
+std::string *breakpoints(std::string &html_content, const char start[IND_SIZE], const char end[IND_SIZE]){
     char *current = &html_content[0];
     std::string *inside = new std::string;
     while(*current != '\0'){
 
-        if((*current == start) && (*(current+1) != end) ){
-            while( (*current != end) && (*current != '\0')){
+        if( equal_str(current, start) ){
+            while( !(equal_str(current, end)) ){
                 (*inside).push_back(*current);
                 current++;
             }
@@ -74,4 +79,16 @@ std::string *breakpoints(std::string &html_content, const char start, const char
     current++;
     }
     return inside;
+}
+
+bool equal_str(char *one, const char two[IND_SIZE]){
+    int i = 0;
+    while(*one != '\0' && two[i] != '\0'){
+        if(*one != two[i]){
+            return false;
+        }
+        i++;
+        one++;
+    }
+    return true;
 }
