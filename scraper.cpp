@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <fstream>
 #include <curl/curl.h>
 #include <sstream>
 
@@ -16,6 +17,8 @@ size_t WriteCallback(void *contents, size_t size, size_t nmemb, std::string *out
 std::string *breakpoints(std::string &html_content, const char start[IND_SIZE], const char end[IND_SIZE]);
 
 int main(int argc, char* argv[]) {
+
+    std::ofstream outfile("output.csv");
     
     // Initialize curl globally
     CURL *curl;
@@ -44,7 +47,10 @@ int main(int argc, char* argv[]) {
             std::cerr << "curl_easy_perform() failed: " << curl_easy_strerror(res) << std::endl;
         } else {
             // Output the HTML content of the page
-            std::cout << *parsed << std::endl;
+            std::cout << "\nParsing website html..." << std::endl;
+            std::cout << "\nPreview: " << *parsed << std::endl;
+
+            outfile << *parsed;
         }
         // Clean up LOCAL
         curl_easy_cleanup(curl);
@@ -53,6 +59,7 @@ int main(int argc, char* argv[]) {
     // Clean up curl globally
     delete html_content;
     curl_global_cleanup();
+    outfile.close();
     return 0;
 }
 
