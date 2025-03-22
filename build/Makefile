@@ -129,6 +129,54 @@ webcrawl/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/webcrawl.dir/build.make CMakeFiles/webcrawl.dir/build
 .PHONY : webcrawl/fast
 
+main.o: main.cpp.o
+.PHONY : main.o
+
+# target to build an object file
+main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/webcrawl.dir/build.make CMakeFiles/webcrawl.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/webcrawl.dir/build.make CMakeFiles/webcrawl.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/webcrawl.dir/build.make CMakeFiles/webcrawl.dir/main.cpp.s
+.PHONY : main.cpp.s
+
+object.o: object.cpp.o
+.PHONY : object.o
+
+# target to build an object file
+object.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/webcrawl.dir/build.make CMakeFiles/webcrawl.dir/object.cpp.o
+.PHONY : object.cpp.o
+
+object.i: object.cpp.i
+.PHONY : object.i
+
+# target to preprocess a source file
+object.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/webcrawl.dir/build.make CMakeFiles/webcrawl.dir/object.cpp.i
+.PHONY : object.cpp.i
+
+object.s: object.cpp.s
+.PHONY : object.s
+
+# target to generate assembly for a file
+object.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/webcrawl.dir/build.make CMakeFiles/webcrawl.dir/object.cpp.s
+.PHONY : object.cpp.s
+
 scraper.o: scraper.cpp.o
 .PHONY : scraper.o
 
@@ -162,6 +210,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... webcrawl"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
+	@echo "... object.o"
+	@echo "... object.i"
+	@echo "... object.s"
 	@echo "... scraper.o"
 	@echo "... scraper.i"
 	@echo "... scraper.s"

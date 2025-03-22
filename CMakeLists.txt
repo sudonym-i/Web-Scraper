@@ -5,7 +5,7 @@ cmake_minimum_required(VERSION 3.10)
 project(webcrawl)
 
 # Add executable target (replace main.cpp with your actual source files)
-add_executable(webcrawl scraper.cpp)
+add_executable(webcrawl main.cpp scraper.cpp object.cpp)
 
 # Specify where to find dependencies from vcpkg (if not set globally)
 set(CMAKE_TOOLCHAIN_FILE /home/isaac/vcpkg/scripts/buildsystems/vcpkg.cmake CACHE STRING "vcpkg toolchain file")

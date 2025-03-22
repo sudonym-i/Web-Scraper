@@ -1,14 +1,11 @@
 #include <iostream>
 #include <string>
-#include <fstream>
 #include <curl/curl.h>
 #include <sstream>
+#include "scraper.h"
 
 //points that detemine what char to start and end reads at
 //for example <a> , </a>
-const int IND_SIZE = 32;
-const char START[IND_SIZE] = "<h1>";
-const char END[IND_SIZE] = "</h1>";
 
 bool equal_str(char *&one, const char two[IND_SIZE]);
 
@@ -16,9 +13,7 @@ size_t WriteCallback(void *contents, size_t size, size_t nmemb, std::string *out
 
 std::string *breakpoints(std::string &html_content, const char start[IND_SIZE], const char end[IND_SIZE]);
 
-int main(int argc, char* argv[]) {
-
-    std::ofstream outfile("output.csv");
+std::string *scrape(int argc, char* argv[], const char start[IND_SIZE], const char end[IND_SIZE]) {
     
     // Initialize curl globally
     CURL *curl;
@@ -41,16 +36,14 @@ int main(int argc, char* argv[]) {
         // Perform the request
         res = curl_easy_perform(curl);
         // Check if the request was successful
-        std::string *parsed = breakpoints(*html_content, START, END);
+        std::string *parsed = breakpoints(*html_content, start, end);
         
         if(res != CURLE_OK) {
             std::cerr << "curl_easy_perform() failed: " << curl_easy_strerror(res) << std::endl;
+            return nullptr;
         } else {
             // Output the HTML content of the page
-            std::cout << "\nParsing website html..." << std::endl;
-            std::cout << "\nPreview: " << *parsed << std::endl;
-
-            outfile << *parsed;
+            return parsed;
         }
         // Clean up LOCAL
         curl_easy_cleanup(curl);
@@ -59,8 +52,7 @@ int main(int argc, char* argv[]) {
     // Clean up curl globally
     delete html_content;
     curl_global_cleanup();
-    outfile.close();
-    return 0;
+    return nullptr;
 }
 
 // Callback function to write the response data
