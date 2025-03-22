@@ -4,6 +4,7 @@
         "-DVCPKG_MANIFEST_MODE=OFF"
     ],
     "files.associations": {
-        "fstream": "cpp"
+        "fstream": "cpp",
+        "iostream": "cpp"
     }
 }

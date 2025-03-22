@@ -195,7 +195,7 @@ CMakeFiles/webcrawl.dir/main.cpp.o: /home/isaac/gitclones/webCrawler/main.cpp \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h
 
-CMakeFiles/webcrawl.dir/object.cpp.o: object.cpp \
+CMakeFiles/webcrawl.dir/object.cpp.o: /home/isaac/gitclones/webCrawler/object.cpp \
   /usr/include/stdc-predef.h
 
 CMakeFiles/webcrawl.dir/scraper.cpp.o: /home/isaac/gitclones/webCrawler/scraper.cpp \
@@ -468,8 +468,6 @@ CMakeFiles/webcrawl.dir/scraper.cpp.o: /home/isaac/gitclones/webCrawler/scraper.
 
 /home/isaac/vcpkg/installed/x64-linux/include/curl/curlver.h:
 
-object.cpp:
-
 /usr/lib/gcc/x86_64-linux-gnu/13/include/syslimits.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h:
@@ -583,6 +581,8 @@ object.cpp:
 /usr/include/c++/13/bits/ostream_insert.h:
 
 /usr/include/x86_64-linux-gnu/bits/cpu-set.h:
+
+/home/isaac/gitclones/webCrawler/object.cpp:
 
 /usr/include/c++/13/bits/invoke.h:
 

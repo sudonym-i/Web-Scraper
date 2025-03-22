@@ -8,12 +8,11 @@
 //for example <a> , </a>
 
 bool equal_str(char *&one, const char two[IND_SIZE]);
-
 size_t WriteCallback(void *contents, size_t size, size_t nmemb, std::string *output);
-
 std::string *breakpoints(std::string &html_content, const char start[IND_SIZE], const char end[IND_SIZE]);
 
-std::string *scrape(int argc, const char *argv, const char start[IND_SIZE], const char end[IND_SIZE]) {
+
+std::string *scrape(int argc, const char argv[IND_SIZE], char start[IND_SIZE], char end[IND_SIZE]) {
     
     // Initialize curl globally
     CURL *curl;

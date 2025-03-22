@@ -197,7 +197,7 @@ CMakeFiles/webcrawl.dir/main.cpp.o
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h
 
 CMakeFiles/webcrawl.dir/object.cpp.o
- /home/isaac/gitclones/webCrawler/build/object.cpp
+ /home/isaac/gitclones/webCrawler/object.cpp
  /usr/include/stdc-predef.h
 
 CMakeFiles/webcrawl.dir/scraper.cpp.o
