@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named MyProject
+# Target rules for targets named webcrawl
 
 # Build rule for target.
-MyProject: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MyProject
-.PHONY : MyProject
+webcrawl: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 webcrawl
+.PHONY : webcrawl
 
 # fast build rule for target.
-MyProject/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProject.dir/build.make CMakeFiles/MyProject.dir/build
-.PHONY : MyProject/fast
+webcrawl/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/webcrawl.dir/build.make CMakeFiles/webcrawl.dir/build
+.PHONY : webcrawl/fast
 
 scraper.o: scraper.cpp.o
 .PHONY : scraper.o
 
 # target to build an object file
 scraper.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProject.dir/build.make CMakeFiles/MyProject.dir/scraper.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/webcrawl.dir/build.make CMakeFiles/webcrawl.dir/scraper.cpp.o
 .PHONY : scraper.cpp.o
 
 scraper.i: scraper.cpp.i
@@ -142,7 +142,7 @@ scraper.i: scraper.cpp.i
 
 # target to preprocess a source file
 scraper.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProject.dir/build.make CMakeFiles/MyProject.dir/scraper.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/webcrawl.dir/build.make CMakeFiles/webcrawl.dir/scraper.cpp.i
 .PHONY : scraper.cpp.i
 
 scraper.s: scraper.cpp.s
@@ -150,7 +150,7 @@ scraper.s: scraper.cpp.s
 
 # target to generate assembly for a file
 scraper.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProject.dir/build.make CMakeFiles/MyProject.dir/scraper.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/webcrawl.dir/build.make CMakeFiles/webcrawl.dir/scraper.cpp.s
 .PHONY : scraper.cpp.s
 
 # Help Target
@@ -161,7 +161,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... MyProject"
+	@echo "... webcrawl"
 	@echo "... scraper.o"
 	@echo "... scraper.i"
 	@echo "... scraper.s"
