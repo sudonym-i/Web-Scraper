@@ -5,11 +5,11 @@
 
 //points that detemine what char to start and end reads at
 //for example <a> , </a>
-const int IND_SIZE = 16;
-const char START[IND_SIZE] = "sy";
-const char END[IND_SIZE] = "<";
+const int IND_SIZE = 32;
+const char START[IND_SIZE] = "<h1>";
+const char END[IND_SIZE] = "</h1>";
 
-bool equal_str(char *one, const char two[IND_SIZE]);
+bool equal_str(char *&one, const char two[IND_SIZE]);
 
 size_t WriteCallback(void *contents, size_t size, size_t nmemb, std::string *output);
 
@@ -81,7 +81,7 @@ std::string *breakpoints(std::string &html_content, const char start[IND_SIZE], 
     return inside;
 }
 
-bool equal_str(char *one, const char two[IND_SIZE]){
+bool equal_str(char *&one, const char two[IND_SIZE]){
     int i = 0;
     while(*one != '\0' && two[i] != '\0'){
         if(*one != two[i]){
