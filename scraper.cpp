@@ -40,18 +40,16 @@ std::string *scrape(int argc, const char argv[IND_SIZE], char start[IND_SIZE], c
         if(res != CURLE_OK) {
             std::cerr << "curl_easy_perform() failed: " << curl_easy_strerror(res) << std::endl;
             delete parsed;
+            delete html_content;
             return nullptr;
         } else {
             // Output the HTML content of the page
+            delete html_content;
+            curl_easy_cleanup(curl);
+            curl_global_cleanup();
             return parsed;
         }
-        // Clean up LOCAL
-        curl_easy_cleanup(curl);
     }
-    // Clean up curl globally
-    delete html_content;
-    curl_global_cleanup();
-    return nullptr;
 }
 
 // Callback function to write the response data

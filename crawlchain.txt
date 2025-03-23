@@ -1,0 +1,6 @@
+START-POINT | END-POINT | URL   <-- Enter comma-seperated
+<div,>,https://www.mtroyal.ca
+<p>,</p>,https://www.mtroyal.ca
+;
+↑
+Teminator char. All else afterwards is ignored.

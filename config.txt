@@ -1,2 +1,0 @@
-Start-point | End-point | URL     <--- comma seperated
-<h2>,</h2>,https://www.mtroyal.ca/
