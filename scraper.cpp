@@ -12,12 +12,15 @@ size_t WriteCallback(void *contents, size_t size, size_t nmemb, std::string *out
 std::string *breakpoints(std::string &html_content, const char start[IND_SIZE], const char end[IND_SIZE]);
 
 
-std::string *scrape(int argc, const char argv[IND_SIZE], char start[IND_SIZE], char end[IND_SIZE]) {
-    
+std::string *scrape(int argc, const char url_char[IND_SIZE], char start[IND_SIZE], char end[IND_SIZE]) {    
     // Initialize curl globally
     CURL *curl;
     CURLcode res;
     std::string *html_content = new std::string;
+
+    std::cout << "url: " << url_char << std::endl;
+    std::cout << "start: " << start << std::endl;
+    std::cout << "end: " << end << std::endl;
 
     // Initialize curl
     curl_global_init(CURL_GLOBAL_ALL);
@@ -25,7 +28,7 @@ std::string *scrape(int argc, const char argv[IND_SIZE], char start[IND_SIZE], c
 
     if(curl) {
         // Set the URL to fetch
-        std::string url = argv;
+        std::string url = url_char;
         curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
 
         // Set the callback function to write the response data into a string
@@ -50,6 +53,7 @@ std::string *scrape(int argc, const char argv[IND_SIZE], char start[IND_SIZE], c
             return parsed;
         }
     }
+    return nullptr;
 }
 
 // Callback function to write the response data
@@ -59,7 +63,7 @@ size_t WriteCallback(void *contents, size_t size, size_t nmemb, std::string *out
     return total_size;
 }
 
-
+//parses into csv
 std::string *breakpoints(std::string &html_content, const char start[IND_SIZE], const char end[IND_SIZE]){
     char *current = &html_content[0];
     std::string *inside = new std::string;
@@ -77,6 +81,7 @@ std::string *breakpoints(std::string &html_content, const char start[IND_SIZE], 
     return inside;
 }
 
+//looks for keywords in html file
 bool equal_str(char *&one, const char two[IND_SIZE]){
     int i = 0;
     while(*one != '\0' && two[i] != '\0'){

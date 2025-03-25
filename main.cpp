@@ -4,31 +4,41 @@
 #include "scraper.h"
 #include "object.h"
 
-//max dimensions for the crawlchain file
-const int MAX_LINE = 64;
-const int MAX_LENGTH = 10;
+//max dimensions for the crawlchain file 
+// (Capped capacity, as website content can get quite large)
+const int MAX_LINE = 512; // hight
+const int MAX_LENGTH = 52; // line length
+
+//filepath to the crawlchain txt file. The file with all the commands.
+const char CHAIN_PATH[MAX_LENGTH] = "../crawlchain.txt";
+
+// Sets which characters will trigger the reader to start interpreting
+// chain commands and when to end (Still must be on their OWN line)
+const char OPEN_CHAIN = '{';
+const char CLOSE_CHAIN = '}';
+const char SEPERATOR = ','; // <-- the seperator char for items in 'crawlchain.txt'
 
 void write(std::ostream &out, node *head);
 void clear(node *&head);
-void parse_crawlchain(int &argc, char argv[MAX_LENGTH][IND_SIZE], char start[MAX_LENGTH][IND_SIZE], char end[MAX_LENGTH][IND_SIZE]);
+void parse_crawlchain(int &argc, char url[MAX_LENGTH][IND_SIZE], char start[MAX_LENGTH][IND_SIZE], char end[MAX_LENGTH][IND_SIZE]);
+
 
 int main(){
     //TODO arg error handling
     int argc;
-    char argv[MAX_LENGTH][IND_SIZE];
+    char url[MAX_LENGTH][IND_SIZE];
     char start[MAX_LENGTH][IND_SIZE];
     char end[MAX_LENGTH][IND_SIZE];
-    parse_crawlchain(argc, argv, start, end);
-  
+    parse_crawlchain(argc, url, start, end);
 
     std::ofstream outfile("op.csv");
     node *head = new node;
-    head->data = scrape(argc, argv[0], start[0], end[0]);
+    head->data = scrape(argc, url[0], start[0], end[0]);
     node *current = head;
     for(int i = 1; i < argc; i++){
         current->next = new node;
         current = current->next;
-        current->data = scrape(argc, argv[i], start[i], end[i]);
+        current->data = scrape(argc, url[i], start[i], end[i]);
     }
 
     write(outfile, head);
@@ -63,21 +73,23 @@ void clear(node *&head){
     }
 }
 
-void parse_crawlchain(int &argc, char argv[MAX_LENGTH][IND_SIZE], char start[MAX_LENGTH][IND_SIZE], char end[MAX_LENGTH][IND_SIZE]){
+//uses syntax to parse info from crawlchain
+void parse_crawlchain(int &argc, char url[MAX_LENGTH][IND_SIZE], char start[MAX_LENGTH][IND_SIZE], char end[MAX_LENGTH][IND_SIZE]){
     char garbage[MAX_LINE];
-    std::ifstream crawlchain("../crawlchain.txt");
+    std::ifstream crawlchain(CHAIN_PATH);
 
     if (!crawlchain.is_open()) {
         std::cerr << "Failed to open the file." << std::endl;
         return;
     }
-
-    crawlchain.getline(garbage, MAX_LINE);
+    while(garbage[0] != OPEN_CHAIN){
+        crawlchain.getline(garbage, MAX_LINE);
+    } // find my initializer line
     int i = 0;
-    while(!crawlchain.eof() && (crawlchain.peek() != ';') ){
-        crawlchain.getline(start[i], MAX_LINE, ',');
-        crawlchain.getline(end[i], MAX_LINE, ',');
-        crawlchain.getline(argv[i], MAX_LINE);
+    while(!crawlchain.eof() && (crawlchain.peek() != CLOSE_CHAIN) ){
+        crawlchain.getline(start[i], MAX_LINE, SEPERATOR);
+        crawlchain.getline(end[i], MAX_LINE, SEPERATOR);
+        crawlchain.getline(url[i], MAX_LINE);
         i++;
     }
     argc = i;

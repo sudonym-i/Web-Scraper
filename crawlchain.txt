@@ -1,9 +1,10 @@
 
 START-POINT | END-POINT | URL   <-- Enter comma-seperated
-<div,>,htps://www.mtroyal.ca
-<p>,</p>,https://www.mtroyal.ca
-;
+{
+<h2,</h2>,https://openstax.org/books/calculus-volume-1/pages/4-1-related-rates
+}
 ↑
-Teminator char. All links afterwards are ignored.
+Curly brackets surround chain. Must be on their own line
+Only one chain allowed.
 
 MODE: csv;
