@@ -6,8 +6,8 @@
 
 //max dimensions for the crawlchain file 
 // (Capped capacity, as website content can get quite large)
-const int MAX_LINE = 512; // hight
-const int MAX_LENGTH = 52; // line length
+const int MAX_LINE = 512; // Max length of each chain
+const int MAX_LENGTH = 52; // max length of crawl-chain
 
 //filepath to the crawlchain txt file. The file with all the commands.
 const char CHAIN_PATH[MAX_LENGTH] = "../crawlchain.txt";

@@ -18,9 +18,9 @@ std::string *scrape(int argc, const char url_char[IND_SIZE], char start[IND_SIZE
     CURLcode res;
     std::string *html_content = new std::string;
 
-    std::cout << "url: " << url_char << std::endl;
-    std::cout << "start: " << start << std::endl;
-    std::cout << "end: " << end << std::endl;
+    std::cout << '\n' << "\033[35m" <<  "  url: " << "\033[00m" << url_char << std::endl;
+    std::cout << "\033[35m" << "  start: " << "\033[00m" << start << std::endl;
+    std::cout << "\033[35m" << "  end: " << "\033[00m" << end  << std::endl;
 
     // Initialize curl
     curl_global_init(CURL_GLOBAL_ALL);
@@ -41,18 +41,20 @@ std::string *scrape(int argc, const char url_char[IND_SIZE], char start[IND_SIZE
         std::string *parsed = breakpoints(*html_content, start, end);
         
         if(res != CURLE_OK) {
-            std::cerr << "curl_easy_perform() failed: " << curl_easy_strerror(res) << std::endl;
             delete parsed;
             delete html_content;
+            std::cerr << "'curl_easy_perform' failed: " << curl_easy_strerror(res) << '\n' << std::endl;
             return nullptr;
         } else {
             // Output the HTML content of the page
             delete html_content;
             curl_easy_cleanup(curl);
             curl_global_cleanup();
+            std::cout << "\033[32m" << "Success\n" << "\033[0m" << std::endl;
             return parsed;
         }
     }
+    std::cout << "failed. Unknown error.\n" << std::endl;
     return nullptr;
 }
 

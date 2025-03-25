@@ -1,7 +1,8 @@
 
 START-POINT | END-POINT | URL   <-- Enter comma-seperated
 {
-<h2,</h2>,https://openstax.org/books/calculus-volume-1/pages/4-1-related-rates
+<h2 class="os-title" data-type="title">,</h2>,https://openstax.org/books/calculus-volume-1/pages/4-1-related-rates
+<h1>,</h1>,https://cornhub.website/
 }
 ↑
 Curly brackets surround chain. Must be on their own line
