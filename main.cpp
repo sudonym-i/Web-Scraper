@@ -29,20 +29,26 @@ int main(){
     char url[MAX_LENGTH][IND_SIZE];
     char start[MAX_LENGTH][IND_SIZE];
     char end[MAX_LENGTH][IND_SIZE];
+
     parse_crawlchain(argc, url, start, end);
 
     std::ofstream outfile("op.csv");
-    node *head = new node;
+
+    // uses 'scrape' to retrieve and parse web content.
+    // the data drom the websites are stored in a linked list in 'nodes'
+    node *head = new node; 
     head->data = scrape(argc, url[0], start[0], end[0]);
-    node *current = head;
+    node *current = head; 
     for(int i = 1; i < argc; i++){
         current->next = new node;
         current = current->next;
         current->data = scrape(argc, url[i], start[i], end[i]);
     }
+    //end intenet scraping
+
 
     write(outfile, head);
-    clear(head);
+    clear(head); //clear linked list from heap
     outfile.close();
     return 0;
 }
@@ -68,6 +74,7 @@ void clear(node *&head){
             delete head;
             head = next_node;
         }
+        delete head->data;
         delete head;
         head = nullptr;
     }
