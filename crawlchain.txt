@@ -1,8 +1,11 @@
 		
+NOTE - All urls and tags are statically allocated, therefore there is a size 
+limit for url's and tags (Default 256 chars). 
+Modify constants for greater capacity.
+
 START-POINT | END-POINT | URL   <-- Enter comma-seperated
 {
-<h1>,</h1>,https://cornhub.website/
-<p class="_925a _94t_ _9igu _925o _9erw">,</p>,https://about.meta.com/brand/resources/instagram/instagram-brand/
+<div class="CardName__StyledCardName-sc-1gyrgim-0 gGdQEj">,</div>,https://www.ratemyprofessors.com/search/professors/1570?q=*
 }
 ↑
 Curly brackets surround chain. Must be on their own line
@@ -11,4 +14,4 @@ Only one chain allowed.
 //Features to be added
 MODE: csv;
 
-NAME: op.csv
+NAME: .gitignore

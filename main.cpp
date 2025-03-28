@@ -32,7 +32,7 @@ int main(){
 
     parse_crawlchain(argc, url, start, end);
 
-    std::ofstream outfile("op.csv");
+    std::ofstream outfile(".gitignore");
 
     // uses 'scrape' to retrieve and parse web content.
     // the data drom the websites are stored in a linked list in 'nodes'
