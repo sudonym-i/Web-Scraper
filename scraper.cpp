@@ -4,20 +4,25 @@
 #include <sstream>
 #include "scraper.h"
 
-//points that detemine what char to start and end reads at
-//for example <a> , </a>
 
+//Sub functions
 bool equal_str(char *&one, const char two[IND_SIZE]);
+
 size_t WriteCallback(void *contents, size_t size, size_t nmemb, std::string *output);
+
 std::string *breakpoints(std::string &html_content, const char start[IND_SIZE], const char end[IND_SIZE]);
 
 
+
+
 std::string *scrape(int argc, const char url_char[IND_SIZE], char start[IND_SIZE], char end[IND_SIZE]) {    
+    
     // Initialize curl globally
     CURL *curl;
     CURLcode res;
     std::string *html_content = new std::string;
 
+    //print message, displays tage and url
     std::cout << '\n' << "\033[35m" <<  "  url: " << "\033[00m" << url_char << std::endl;
     std::cout << "\033[35m" << "  start: " << "\033[00m" << start << std::endl;
     std::cout << "\033[35m" << "  end: " << "\033[00m" << end  << std::endl;
@@ -27,6 +32,7 @@ std::string *scrape(int argc, const char url_char[IND_SIZE], char start[IND_SIZE
     curl = curl_easy_init();
 
     if(curl) {
+
         // Set the URL to fetch
         std::string url = url_char;
         curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
@@ -37,26 +43,39 @@ std::string *scrape(int argc, const char url_char[IND_SIZE], char start[IND_SIZE
 
         // Perform the request
         res = curl_easy_perform(curl);
-        // Check if the request was successful
+
+        // Parse the raw html file, returning only the stuff between the 'breakpoints'
         std::string *parsed = breakpoints(*html_content, start, end);
         
+        //error checking
         if(res != CURLE_OK) {
+
+            // in case of error, delete everything and return nullptr
             delete parsed;
             delete html_content;
             std::cerr << "'curl_easy_perform' failed: " << curl_easy_strerror(res) << '\n' << std::endl;
             return nullptr;
+
         } else {
-            // Output the HTML content of the page
+
+            // Delete the raw html, return pointer to our parsed html data
             delete html_content;
             curl_easy_cleanup(curl);
             curl_global_cleanup();
             std::cout << "\033[32m" << "Success\n" << "\033[0m" << std::endl;
             return parsed;
-        }
+
+        } // end consitional control
+
     }
+
+    //Extra error checking for cases outside of the conditional (according to the compiler they exist)
     std::cout << "failed. Unknown error.\n" << std::endl;
     return nullptr;
 }
+
+
+
 
 // Callback function to write the response data
 size_t WriteCallback(void *contents, size_t size, size_t nmemb, std::string *output) {
@@ -69,17 +88,23 @@ size_t WriteCallback(void *contents, size_t size, size_t nmemb, std::string *out
 std::string *breakpoints(std::string &html_content, const char start[IND_SIZE], const char end[IND_SIZE]){
     char *current = &html_content[0];
     std::string *inside = new std::string;
+
     while(*current != '\0'){
 
+        //if we find the initiator tag...
         if( equal_str(current, start) ){
+
+            //then we keep adding content until we reach the terminator tag
             while( !(equal_str(current, end)) ){
                 (*inside).push_back(*current);
                 current++;
             }
             (*inside).push_back(',');
+
         }
     current++;
     }
+
     return inside;
 }
 
