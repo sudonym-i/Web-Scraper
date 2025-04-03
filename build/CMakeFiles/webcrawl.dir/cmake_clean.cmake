@@ -1,8 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/webcrawl.dir/main.cpp.o"
   "CMakeFiles/webcrawl.dir/main.cpp.o.d"
-  "CMakeFiles/webcrawl.dir/object.cpp.o"
-  "CMakeFiles/webcrawl.dir/object.cpp.o.d"
   "CMakeFiles/webcrawl.dir/scraper.cpp.o"
   "CMakeFiles/webcrawl.dir/scraper.cpp.o.d"
   "webcrawl"

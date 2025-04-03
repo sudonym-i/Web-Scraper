@@ -4,18 +4,96 @@
 #include <sstream>
 #include "scraper.h"
 
+DataList::~DataList(){
+   //Erases entire linked list from heap
+    node *next_node = nullptr;
+    if(head != nullptr){
+        while( head->next != nullptr ){
+            next_node = head->next;
+            delete head->data;
+            delete head;
+            head = next_node;
+        }
+        delete head->data;
+        delete head;
+        head = nullptr;
+    }
+}
 
-//Sub functions
-bool equal_str(char *&one, const char two[IND_SIZE]);
 
-size_t WriteCallback(void *contents, size_t size, size_t nmemb, std::string *output);
+DataList::DataList( int argc, char url[MAX_LINE][MAX_LINE], char start[MAX_LINE][MAX_LINE], char end[MAX_LINE][MAX_LINE]){
+    head = new node; 
+    head->data = scrape(argc, url[0], start[0], end[0]);
+    node *current = head; 
+    for(int i = 1; i < argc; i++){
+        current->next = new node;
+        current = current->next;
+        current->data = scrape(argc, url[i], start[i], end[i]);
+    }
+}
 
-std::string *breakpoints(std::string &html_content, const char start[IND_SIZE], const char end[IND_SIZE]);
+
+//writes the entire linked list to ostream
+void DataList::write(std::ostream &out){
+    node *current = head;
+    while(current != nullptr){
+        out << *current->data << std::endl;
+        current = current->next;
+    }
+    out << std::endl;
+}
+
+
+//parses into csv
+std::string *DataList::breakpoints(std::string &html_content, const char start[MAX_LINE], const char end[MAX_LINE]){
+    char *current = &html_content[0];
+    std::string *inside = new std::string;
+
+    while(*current != '\0'){
+
+        //if we find the initiator tag...
+        if( equal_str(current, start) ){
+
+            //then we keep adding content until we reach the terminator tag
+            while( !(equal_str(current, end)) ){
+                (*inside).push_back(*current);
+                current++;
+            }
+            (*inside).push_back(',');
+
+        }
+    current++;
+    }
+
+    return inside;
+}
+
+
+//looks for keywords in html file
+bool DataList::equal_str(char *&one, const char two[MAX_LINE]){
+    int i = 0;
+    while(*one != '\0' && two[i] != '\0'){
+        if(*one != two[i]){
+            return false;
+        }
+        i++;
+        one++;
+    }
+    return true;
+}
+    
+
+// Callback function to write the response data
+size_t DataList::WriteCallback(void *contents, size_t size, size_t nmemb, std::string *output) {
+    size_t total_size = size * nmemb;
+    output->append((char*)contents, total_size);
+    return total_size;
+}
 
 
 
-
-std::string *scrape(int argc, const char url_char[IND_SIZE], char start[IND_SIZE], char end[IND_SIZE]) {    
+std::string *DataList::scrape(int argc, const char url_char[MAX_LINE], 
+		char start[MAX_LINE], char end[MAX_LINE]) {    
     
     // Initialize curl globally
     CURL *curl;
@@ -74,49 +152,3 @@ std::string *scrape(int argc, const char url_char[IND_SIZE], char start[IND_SIZE
     return nullptr;
 }
 
-
-
-
-// Callback function to write the response data
-size_t WriteCallback(void *contents, size_t size, size_t nmemb, std::string *output) {
-    size_t total_size = size * nmemb;
-    output->append((char*)contents, total_size);
-    return total_size;
-}
-
-//parses into csv
-std::string *breakpoints(std::string &html_content, const char start[IND_SIZE], const char end[IND_SIZE]){
-    char *current = &html_content[0];
-    std::string *inside = new std::string;
-
-    while(*current != '\0'){
-
-        //if we find the initiator tag...
-        if( equal_str(current, start) ){
-
-            //then we keep adding content until we reach the terminator tag
-            while( !(equal_str(current, end)) ){
-                (*inside).push_back(*current);
-                current++;
-            }
-            (*inside).push_back(',');
-
-        }
-    current++;
-    }
-
-    return inside;
-}
-
-//looks for keywords in html file
-bool equal_str(char *&one, const char two[IND_SIZE]){
-    int i = 0;
-    while(*one != '\0' && two[i] != '\0'){
-        if(*one != two[i]){
-            return false;
-        }
-        i++;
-        one++;
-    }
-    return true;
-}

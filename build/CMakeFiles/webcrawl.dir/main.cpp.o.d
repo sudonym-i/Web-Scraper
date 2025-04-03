@@ -155,5 +155,4 @@ CMakeFiles/webcrawl.dir/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
  /usr/include/c++/13/bits/fstream.tcc \
- /home/isaac/gitclones/webCrawler/scraper.h \
- /home/isaac/gitclones/webCrawler/object.h
+ /home/isaac/gitclones/webCrawler/scraper.h
