@@ -7,25 +7,7 @@ NOTE -  All urls and tags are statically allocated, therefore there is a size
 
 START-POINT | END-POINT | URL   <-- Enter comma-seperated
 {
-return false;">,</a>,https://catalog.mtroyal.ca/content.php?catoid=36&navoid=2946
-return false;">,</a>,https://catalog.mtroyal.ca/content.php?catoid=36&catoid=36&navoid=2946&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=2#acalog_template_course_filter
-return false;">,</a>,https://catalog.mtroyal.ca/content.php?catoid=36&catoid=36&navoid=2946&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=3#acalog_template_course_filter
-return false;">,</a>,https://catalog.mtroyal.ca/content.php?catoid=36&catoid=36&navoid=2946&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=4#acalog_template_course_filter
-return false;">,</a>,https://catalog.mtroyal.ca/content.php?catoid=36&catoid=36&navoid=2946&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=5#acalog_template_course_filter
-return false;">,</a>,https://catalog.mtroyal.ca/content.php?catoid=36&catoid=36&navoid=2946&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=6#acalog_template_course_filter
-return false;">,</a>,https://catalog.mtroyal.ca/content.php?catoid=36&catoid=36&navoid=2946&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=7#acalog_template_course_filter
-return false;">,</a>,https://catalog.mtroyal.ca/content.php?catoid=36&catoid=36&navoid=2946&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=8#acalog_template_course_filter
-return false;">,</a>,https://catalog.mtroyal.ca/content.php?catoid=36&catoid=36&navoid=2946&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=9#acalog_template_course_filter
-return false;">,</a>,https://catalog.mtroyal.ca/content.php?catoid=36&catoid=36&navoid=2946&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=10#acalog_template_course_filter
-return false;">,</a>,https://catalog.mtroyal.ca/content.php?catoid=36&catoid=36&navoid=2946&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=11#acalog_template_course_filter
-return false;">,</a>,https://catalog.mtroyal.ca/content.php?catoid=36&catoid=36&navoid=2946&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=12#acalog_template_course_filter
-return false;">,</a>,https://catalog.mtroyal.ca/content.php?catoid=36&catoid=36&navoid=2946&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=13#acalog_template_course_filter
-return false;">,</a>,https://catalog.mtroyal.ca/content.php?catoid=36&catoid=36&navoid=2946&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=14#acalog_template_course_filter
-return false;">,</a>,https://catalog.mtroyal.ca/content.php?catoid=36&catoid=36&navoid=2946&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=15#acalog_template_course_filter
-return false;">,</a>,https://catalog.mtroyal.ca/content.php?catoid=36&catoid=36&navoid=2946&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=16#acalog_template_course_filter
-return false;">,</a>,https://catalog.mtroyal.ca/content.php?catoid=36&catoid=36&navoid=2946&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=17#acalog_template_course_filter
-return false;">,</a>,https://catalog.mtroyal.ca/content.php?catoid=36&catoid=36&navoid=2946&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=18#acalog_template_course_filter
-return false;">,</a>,https://catalog.mtroyal.ca/content.php?catoid=36&catoid=36&navoid=2946&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=19#acalog_template_course_filter
+<a>,</a>,https://catalog.mtroyal.ca/content.php?catoid=36&navoid=2946
 }
 ↑
 Curly brackets surround chain. Must be on their own line
