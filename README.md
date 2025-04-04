@@ -1,5 +1,5 @@
 
-WEBCRAWLER
+WEBSCRAPER
 
 -----------------------------------
 
@@ -9,7 +9,7 @@ Dependencies:
 
 -----------------------------------
 
-The 'crawlchain.txt' is the file you use to tell the program what to do. 
+The 'chain.txt' is the file you use to tell the program what to do. 
 Specify the url(s), start tag(s), and end tag(s).
 The program will go through the website and collect all of the content that lies
 between these two tags. With javascript rendered sites it might take a bit more effort to 

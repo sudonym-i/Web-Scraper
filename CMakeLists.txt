@@ -2,10 +2,10 @@
 cmake_minimum_required(VERSION 3.10)
 
 # Define the project name
-project(webcrawl.exe)
+project(webscrape.exe)
 
 # Add executable target (replace main.cpp with your actual source files)
-add_executable(webcrawl.exe main.cpp scraper.cpp)
+add_executable(webscrape.exe main.cpp scraper.cpp)
 
 # Specify where to find dependencies from vcpkg (if not set globally)
 set(CMAKE_TOOLCHAIN_FILE /home/isaac/vcpkg/scripts/buildsystems/vcpkg.cmake CACHE STRING "vcpkg toolchain file")
@@ -17,4 +17,4 @@ find_package(CURL REQUIRED)
 find_package(LibXml2 REQUIRED)
 
 # Link dependencies to your project
-target_link_libraries(webcrawl.exe CURL::libcurl LibXml2::LibXml2)
+target_link_libraries(webscrape.exe CURL::libcurl LibXml2::LibXml2)

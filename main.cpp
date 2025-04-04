@@ -4,7 +4,7 @@
 #include "scraper.h"
 
 //filepath to the crawlchain txt file. The file with all the commands.
-const char CHAIN_PATH[MAX_LENGTH] = "../crawlchain.txt";
+const char CHAIN_PATH[MAX_LENGTH] = "../chain.txt";
 const char OUTPUT_NAME[MAX_LENGTH] = "course_names";
 
 // CHAIN commands (for READING crawlchain.txt)
