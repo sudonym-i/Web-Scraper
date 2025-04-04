@@ -148,7 +148,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=webcrawl
+CMAKE_PROJECT_NAME:STATIC=webcrawl.exe
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -326,6 +326,15 @@ webCrawler_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 webCrawler_SOURCE_DIR:STATIC=/home/isaac/gitclones/webCrawler
+
+//Value Computed by CMake
+webcrawl.exe_BINARY_DIR:STATIC=/home/isaac/gitclones/webCrawler/build
+
+//Value Computed by CMake
+webcrawl.exe_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+webcrawl.exe_SOURCE_DIR:STATIC=/home/isaac/gitclones/webCrawler
 
 //Value Computed by CMake
 webcrawl_BINARY_DIR:STATIC=/home/isaac/gitclones/webCrawler/build

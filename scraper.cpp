@@ -37,10 +37,9 @@ DataList::DataList( int argc, char url[MAX_LINE][MAX_LINE], char start[MAX_LINE]
 void DataList::write(std::ostream &out){
     node *current = head;
     while(current != nullptr){
-        out << *current->data << std::endl;
+        out << *current->data;
         current = current->next;
     }
-    out << std::endl;
 }
 
 
@@ -59,7 +58,7 @@ std::string *DataList::breakpoints(std::string &html_content, const char start[M
                 (*inside).push_back(*current);
                 current++;
             }
-            (*inside).push_back(',');
+            (*inside).push_back(OUTPUT_SEPERATOR);
 
         }
     current++;

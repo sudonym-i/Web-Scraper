@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named webcrawl
+# Target rules for targets named webcrawl.exe
 
 # Build rule for target.
-webcrawl: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 webcrawl
-.PHONY : webcrawl
+webcrawl.exe: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 webcrawl.exe
+.PHONY : webcrawl.exe
 
 # fast build rule for target.
-webcrawl/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/webcrawl.dir/build.make CMakeFiles/webcrawl.dir/build
-.PHONY : webcrawl/fast
+webcrawl.exe/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/webcrawl.exe.dir/build.make CMakeFiles/webcrawl.exe.dir/build
+.PHONY : webcrawl.exe/fast
 
 main.o: main.cpp.o
 .PHONY : main.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/webcrawl.dir/build.make CMakeFiles/webcrawl.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/webcrawl.exe.dir/build.make CMakeFiles/webcrawl.exe.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -142,7 +142,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/webcrawl.dir/build.make CMakeFiles/webcrawl.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/webcrawl.exe.dir/build.make CMakeFiles/webcrawl.exe.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -150,7 +150,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/webcrawl.dir/build.make CMakeFiles/webcrawl.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/webcrawl.exe.dir/build.make CMakeFiles/webcrawl.exe.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 scraper.o: scraper.cpp.o
@@ -158,7 +158,7 @@ scraper.o: scraper.cpp.o
 
 # target to build an object file
 scraper.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/webcrawl.dir/build.make CMakeFiles/webcrawl.dir/scraper.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/webcrawl.exe.dir/build.make CMakeFiles/webcrawl.exe.dir/scraper.cpp.o
 .PHONY : scraper.cpp.o
 
 scraper.i: scraper.cpp.i
@@ -166,7 +166,7 @@ scraper.i: scraper.cpp.i
 
 # target to preprocess a source file
 scraper.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/webcrawl.dir/build.make CMakeFiles/webcrawl.dir/scraper.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/webcrawl.exe.dir/build.make CMakeFiles/webcrawl.exe.dir/scraper.cpp.i
 .PHONY : scraper.cpp.i
 
 scraper.s: scraper.cpp.s
@@ -174,7 +174,7 @@ scraper.s: scraper.cpp.s
 
 # target to generate assembly for a file
 scraper.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/webcrawl.dir/build.make CMakeFiles/webcrawl.dir/scraper.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/webcrawl.exe.dir/build.make CMakeFiles/webcrawl.exe.dir/scraper.cpp.s
 .PHONY : scraper.cpp.s
 
 # Help Target
@@ -185,7 +185,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... webcrawl"
+	@echo "... webcrawl.exe"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

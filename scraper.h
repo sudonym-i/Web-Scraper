@@ -5,6 +5,7 @@
 const int MAX_LINE = 512; // Max length of each chain
 const int MAX_LENGTH = 52; // max length of crawl-chain
 
+const char OUTPUT_SEPERATOR = '\n';
 
 class DataList{
 
