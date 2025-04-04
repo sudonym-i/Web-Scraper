@@ -77,5 +77,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/webcrawl.exe.dir/DependInfo.cmake"
+  "CMakeFiles/webscrape.exe.dir/DependInfo.cmake"
   )

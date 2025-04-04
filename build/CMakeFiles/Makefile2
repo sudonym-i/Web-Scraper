@@ -63,7 +63,7 @@ CMAKE_BINARY_DIR = /home/isaac/gitclones/webCrawler/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/webcrawl.exe.dir/all
+all: CMakeFiles/webscrape.exe.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +71,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/webcrawl.exe.dir/clean
+clean: CMakeFiles/webscrape.exe.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/webcrawl.exe.dir
+# Target rules for target CMakeFiles/webscrape.exe.dir
 
 # All Build rule for target.
-CMakeFiles/webcrawl.exe.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/webcrawl.exe.dir/build.make CMakeFiles/webcrawl.exe.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/webcrawl.exe.dir/build.make CMakeFiles/webcrawl.exe.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/isaac/gitclones/webCrawler/build/CMakeFiles --progress-num=1,2,3 "Built target webcrawl.exe"
-.PHONY : CMakeFiles/webcrawl.exe.dir/all
+CMakeFiles/webscrape.exe.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/webscrape.exe.dir/build.make CMakeFiles/webscrape.exe.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/webscrape.exe.dir/build.make CMakeFiles/webscrape.exe.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/isaac/gitclones/webCrawler/build/CMakeFiles --progress-num=1,2,3 "Built target webscrape.exe"
+.PHONY : CMakeFiles/webscrape.exe.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/webcrawl.exe.dir/rule: cmake_check_build_system
+CMakeFiles/webscrape.exe.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/isaac/gitclones/webCrawler/build/CMakeFiles 3
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/webcrawl.exe.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/webscrape.exe.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/isaac/gitclones/webCrawler/build/CMakeFiles 0
-.PHONY : CMakeFiles/webcrawl.exe.dir/rule
+.PHONY : CMakeFiles/webscrape.exe.dir/rule
 
 # Convenience name for target.
-webcrawl.exe: CMakeFiles/webcrawl.exe.dir/rule
-.PHONY : webcrawl.exe
+webscrape.exe: CMakeFiles/webscrape.exe.dir/rule
+.PHONY : webscrape.exe
 
 # clean rule for target.
-CMakeFiles/webcrawl.exe.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/webcrawl.exe.dir/build.make CMakeFiles/webcrawl.exe.dir/clean
-.PHONY : CMakeFiles/webcrawl.exe.dir/clean
+CMakeFiles/webscrape.exe.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/webscrape.exe.dir/build.make CMakeFiles/webscrape.exe.dir/clean
+.PHONY : CMakeFiles/webscrape.exe.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
