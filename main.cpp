@@ -5,29 +5,30 @@
 
 //filepath to the crawlchain txt file. The file with all the commands.
 const char CHAIN_PATH[MAX_LENGTH] = "../chain.txt";
-const char OUTPUT_NAME[MAX_LENGTH] = "course_names";
 
 // CHAIN commands (for READING crawlchain.txt)
 const char OPEN_CHAIN = '{';
 const char CLOSE_CHAIN = '}';
 const char SEPERATOR = ','; // <-- the seperator char for items in 'crawlchain.txt'
 
-void parse_crawlchain(int &argc, char url[MAX_LENGTH][MAX_LINE], char start[MAX_LENGTH][MAX_LINE], char end[MAX_LENGTH][MAX_LINE]);
+void parse_crawlchain(int &argc, char url[MAX_LENGTH][MAX_LINE], 
+		char start[MAX_LENGTH][MAX_LINE], char end[MAX_LENGTH][MAX_LINE], 
+		char output_name[MAX_LENGTH]);
 
 int main(){    
 //TODO arg error handling
     int argc;
-
+    char output_name[MAX_LENGTH];
     char url[MAX_LENGTH][MAX_LINE];
     char start[MAX_LENGTH][MAX_LINE];
     char end[MAX_LENGTH][MAX_LINE];
 
-    parse_crawlchain(argc, url, start, end);
+    parse_crawlchain(argc, url, start, end, output_name);
     //extract neccesary information from the crawlchain.txt file
     
     DataList crawledData(argc, url, start, end);
 
-    std::ofstream outfile(OUTPUT_NAME);
+    std::ofstream outfile(output_name);
 
     crawledData.write(outfile);
     
@@ -38,7 +39,8 @@ int main(){
 
 
 //recursive function to handle potential blank lines inside the brackets for the crawlchain - more redundency
-bool feedline(std::istream &crawlchain, char start[MAX_LENGTH][MAX_LINE], char end[MAX_LENGTH][MAX_LINE], char url[MAX_LENGTH][MAX_LINE], int i){
+bool feedline(std::istream &crawlchain, char start[MAX_LENGTH][MAX_LINE], 
+		char end[MAX_LENGTH][MAX_LINE], char url[MAX_LENGTH][MAX_LINE], int i){
     
     if( crawlchain.eof() || (crawlchain.peek() == CLOSE_CHAIN) ){
         return false;
@@ -53,8 +55,13 @@ bool feedline(std::istream &crawlchain, char start[MAX_LENGTH][MAX_LINE], char e
  
 
 //uses syntax to parse info from crawlchain
-void parse_crawlchain(int &argc, char url[MAX_LENGTH][MAX_LINE], char start[MAX_LENGTH][MAX_LINE], char end[MAX_LENGTH][MAX_LINE]){
+void parse_crawlchain(int &argc, char url[MAX_LENGTH][MAX_LINE], 
+		char start[MAX_LENGTH][MAX_LINE], char end[MAX_LENGTH][MAX_LINE], 
+		char output_name[MAX_LENGTH]){
+
     char garbage[MAX_LINE] = {};
+    char garby;
+
     std::ifstream crawlchain(CHAIN_PATH);
 
     if (!crawlchain.is_open()) {
@@ -65,11 +72,17 @@ void parse_crawlchain(int &argc, char url[MAX_LENGTH][MAX_LINE], char start[MAX_
     while(garbage[0] != OPEN_CHAIN){
         crawlchain.getline(garbage, MAX_LINE);
     } // find my initializer line
+    
     int i = 0;
-   
+
     while(feedline(crawlchain, start, end, url, i)){ 
 	    i++; 
     }
+    crawlchain.getline(garbage, MAX_LINE, ':');
+    crawlchain.get(garby);
+    crawlchain.getline(output_name, MAX_LENGTH, ';'); 
     argc = i;
+    crawlchain.close();
     return;
 }
+
