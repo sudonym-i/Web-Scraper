@@ -54,7 +54,7 @@ bool feedline(std::istream &crawlchain, char start[MAX_LENGTH][MAX_LINE],
 }
  
 
-//uses syntax to parse info from crawlchain
+//uses syntax to parse info from chain.txt
 void parse_crawlchain(int &argc, char url[MAX_LENGTH][MAX_LINE], 
 		char start[MAX_LENGTH][MAX_LINE], char end[MAX_LENGTH][MAX_LINE], 
 		char output_name[MAX_LENGTH]){

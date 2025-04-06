@@ -1,5 +1,5 @@
 CMakeFiles/webscrape.exe.dir/main.cpp.o: \
- /home/isaac/gitclones/webCrawler/main.cpp /usr/include/stdc-predef.h \
+ /home/isaac/gitclones/web-scraper/main.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/13/string /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -155,4 +155,4 @@ CMakeFiles/webscrape.exe.dir/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
  /usr/include/c++/13/bits/fstream.tcc \
- /home/isaac/gitclones/webCrawler/scraper.h
+ /home/isaac/gitclones/web-scraper/scraper.h

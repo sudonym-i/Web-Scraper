@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/isaac/gitclones/webCrawler/main.cpp" "CMakeFiles/webscrape.exe.dir/main.cpp.o" "gcc" "CMakeFiles/webscrape.exe.dir/main.cpp.o.d"
-  "/home/isaac/gitclones/webCrawler/scraper.cpp" "CMakeFiles/webscrape.exe.dir/scraper.cpp.o" "gcc" "CMakeFiles/webscrape.exe.dir/scraper.cpp.o.d"
+  "/home/isaac/gitclones/web-scraper/main.cpp" "CMakeFiles/webscrape.exe.dir/main.cpp.o" "gcc" "CMakeFiles/webscrape.exe.dir/main.cpp.o.d"
+  "/home/isaac/gitclones/web-scraper/scraper.cpp" "CMakeFiles/webscrape.exe.dir/scraper.cpp.o" "gcc" "CMakeFiles/webscrape.exe.dir/scraper.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

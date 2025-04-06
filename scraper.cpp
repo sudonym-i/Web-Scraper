@@ -90,11 +90,10 @@ size_t DataList::WriteCallback(void *contents, size_t size, size_t nmemb, std::s
 }
 
 
-
+//Main function which scrapes the given websites using CURL
 std::string *DataList::scrape(int argc, const char url_char[MAX_LINE], 
 		char start[MAX_LINE], char end[MAX_LINE]) {    
     
-    // Initialize curl globally
     CURL *curl;
     CURLcode res;
     std::string *html_content = new std::string;
@@ -104,15 +103,13 @@ std::string *DataList::scrape(int argc, const char url_char[MAX_LINE],
     std::cout << "\033[35m" << "  start: " << "\033[00m" << start << std::endl;
     std::cout << "\033[35m" << "  end: " << "\033[00m" << end  << std::endl;
 
-    // Initialize curl
     curl_global_init(CURL_GLOBAL_ALL);
-    curl = curl_easy_init();
 
     if(curl) {
 
         // Set the URL to fetch
         std::string url = url_char;
-        curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
+        curl_easy_setopt(curl_easy_init(), CURLOPT_URL, url.c_str());
 
         // Set the callback function to write the response data into a string
         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
@@ -122,6 +119,7 @@ std::string *DataList::scrape(int argc, const char url_char[MAX_LINE],
         res = curl_easy_perform(curl);
 
         // Parse the raw html file, returning only the stuff between the 'breakpoints'
+	// NOTE: 'breakpoints' returns pointer to new string alloc'd on heap
         std::string *parsed = breakpoints(*html_content, start, end);
         
         //error checking
@@ -146,7 +144,7 @@ std::string *DataList::scrape(int argc, const char url_char[MAX_LINE],
 
     }
 
-    //Extra error checking for cases outside of the conditional (according to the compiler they exist)
+    //Extra error checking for cases outside of the conditional
     std::cout << "failed. Unknown error.\n" << std::endl;
     return nullptr;
 }

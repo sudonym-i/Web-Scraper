@@ -14,7 +14,6 @@ set(CMAKE_TOOLCHAIN_FILE /home/isaac/vcpkg/scripts/buildsystems/vcpkg.cmake CACH
 
 # Find dependencies
 find_package(CURL REQUIRED)
-find_package(LibXml2 REQUIRED)
 
 # Link dependencies to your project
-target_link_libraries(webscrape.exe CURL::libcurl LibXml2::LibXml2)
+target_link_libraries(webscrape.exe CURL::libcurl)

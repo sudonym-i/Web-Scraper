@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/isaac/gitclones/webCrawler
+CMAKE_SOURCE_DIR = /home/isaac/gitclones/web-scraper
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/isaac/gitclones/webCrawler/build
+CMAKE_BINARY_DIR = /home/isaac/gitclones/web-scraper/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/webscrape.exe.dir/depend.make
@@ -70,32 +70,32 @@ include CMakeFiles/webscrape.exe.dir/progress.make
 include CMakeFiles/webscrape.exe.dir/flags.make
 
 CMakeFiles/webscrape.exe.dir/main.cpp.o: CMakeFiles/webscrape.exe.dir/flags.make
-CMakeFiles/webscrape.exe.dir/main.cpp.o: /home/isaac/gitclones/webCrawler/main.cpp
+CMakeFiles/webscrape.exe.dir/main.cpp.o: /home/isaac/gitclones/web-scraper/main.cpp
 CMakeFiles/webscrape.exe.dir/main.cpp.o: CMakeFiles/webscrape.exe.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/isaac/gitclones/webCrawler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/webscrape.exe.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/webscrape.exe.dir/main.cpp.o -MF CMakeFiles/webscrape.exe.dir/main.cpp.o.d -o CMakeFiles/webscrape.exe.dir/main.cpp.o -c /home/isaac/gitclones/webCrawler/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/isaac/gitclones/web-scraper/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/webscrape.exe.dir/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/webscrape.exe.dir/main.cpp.o -MF CMakeFiles/webscrape.exe.dir/main.cpp.o.d -o CMakeFiles/webscrape.exe.dir/main.cpp.o -c /home/isaac/gitclones/web-scraper/main.cpp
 
 CMakeFiles/webscrape.exe.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/webscrape.exe.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/isaac/gitclones/webCrawler/main.cpp > CMakeFiles/webscrape.exe.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/isaac/gitclones/web-scraper/main.cpp > CMakeFiles/webscrape.exe.dir/main.cpp.i
 
 CMakeFiles/webscrape.exe.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/webscrape.exe.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/isaac/gitclones/webCrawler/main.cpp -o CMakeFiles/webscrape.exe.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/isaac/gitclones/web-scraper/main.cpp -o CMakeFiles/webscrape.exe.dir/main.cpp.s
 
 CMakeFiles/webscrape.exe.dir/scraper.cpp.o: CMakeFiles/webscrape.exe.dir/flags.make
-CMakeFiles/webscrape.exe.dir/scraper.cpp.o: /home/isaac/gitclones/webCrawler/scraper.cpp
+CMakeFiles/webscrape.exe.dir/scraper.cpp.o: /home/isaac/gitclones/web-scraper/scraper.cpp
 CMakeFiles/webscrape.exe.dir/scraper.cpp.o: CMakeFiles/webscrape.exe.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/isaac/gitclones/webCrawler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/webscrape.exe.dir/scraper.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/webscrape.exe.dir/scraper.cpp.o -MF CMakeFiles/webscrape.exe.dir/scraper.cpp.o.d -o CMakeFiles/webscrape.exe.dir/scraper.cpp.o -c /home/isaac/gitclones/webCrawler/scraper.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/isaac/gitclones/web-scraper/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/webscrape.exe.dir/scraper.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/webscrape.exe.dir/scraper.cpp.o -MF CMakeFiles/webscrape.exe.dir/scraper.cpp.o.d -o CMakeFiles/webscrape.exe.dir/scraper.cpp.o -c /home/isaac/gitclones/web-scraper/scraper.cpp
 
 CMakeFiles/webscrape.exe.dir/scraper.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/webscrape.exe.dir/scraper.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/isaac/gitclones/webCrawler/scraper.cpp > CMakeFiles/webscrape.exe.dir/scraper.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/isaac/gitclones/web-scraper/scraper.cpp > CMakeFiles/webscrape.exe.dir/scraper.cpp.i
 
 CMakeFiles/webscrape.exe.dir/scraper.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/webscrape.exe.dir/scraper.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/isaac/gitclones/webCrawler/scraper.cpp -o CMakeFiles/webscrape.exe.dir/scraper.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/isaac/gitclones/web-scraper/scraper.cpp -o CMakeFiles/webscrape.exe.dir/scraper.cpp.s
 
 # Object files for target webscrape.exe
 webscrape_exe_OBJECTS = \
@@ -108,14 +108,12 @@ webscrape_exe_EXTERNAL_OBJECTS =
 webscrape.exe: CMakeFiles/webscrape.exe.dir/main.cpp.o
 webscrape.exe: CMakeFiles/webscrape.exe.dir/scraper.cpp.o
 webscrape.exe: CMakeFiles/webscrape.exe.dir/build.make
-webscrape.exe: /home/isaac/vcpkg/installed/x64-linux/debug/lib/libxml2.a
 webscrape.exe: /home/isaac/vcpkg/installed/x64-linux/debug/lib/libcurl-d.a
 webscrape.exe: /home/isaac/vcpkg/installed/x64-linux/lib/libssl.a
 webscrape.exe: /home/isaac/vcpkg/installed/x64-linux/lib/libcrypto.a
-webscrape.exe: /home/isaac/vcpkg/installed/x64-linux/lib/liblzma.a
 webscrape.exe: /home/isaac/vcpkg/installed/x64-linux/lib/libz.a
 webscrape.exe: CMakeFiles/webscrape.exe.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/isaac/gitclones/webCrawler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable webscrape.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/isaac/gitclones/web-scraper/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable webscrape.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/webscrape.exe.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -127,6 +125,6 @@ CMakeFiles/webscrape.exe.dir/clean:
 .PHONY : CMakeFiles/webscrape.exe.dir/clean
 
 CMakeFiles/webscrape.exe.dir/depend:
-	cd /home/isaac/gitclones/webCrawler/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/isaac/gitclones/webCrawler /home/isaac/gitclones/webCrawler /home/isaac/gitclones/webCrawler/build /home/isaac/gitclones/webCrawler/build /home/isaac/gitclones/webCrawler/build/CMakeFiles/webscrape.exe.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/isaac/gitclones/web-scraper/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/isaac/gitclones/web-scraper /home/isaac/gitclones/web-scraper /home/isaac/gitclones/web-scraper/build /home/isaac/gitclones/web-scraper/build /home/isaac/gitclones/web-scraper/build/CMakeFiles/webscrape.exe.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/webscrape.exe.dir/depend
 
