@@ -5,7 +5,6 @@ WEBSCRAPER
 
 Dependencies:
   -Curl
-  -LibXml2
 
 -----------------------------------
 
