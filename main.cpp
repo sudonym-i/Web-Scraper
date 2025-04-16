@@ -44,11 +44,11 @@ bool feedline(std::istream &crawlchain, char start[MAX_LENGTH][MAX_LINE],
     
     if( crawlchain.eof() || (crawlchain.peek() == CLOSE_CHAIN) ){
         return false;
-    } else{
-    crawlchain.getline(start[i], MAX_LINE, SEPERATOR);
-    crawlchain.getline(end[i], MAX_LINE, SEPERATOR);
-    crawlchain.getline(url[i], MAX_LINE);    
-    return true;
+    }else{
+        crawlchain.getline(start[i], MAX_LINE, SEPERATOR);
+        crawlchain.getline(end[i], MAX_LINE, SEPERATOR);
+        crawlchain.getline(url[i], MAX_LINE);    
+        return true;
     
     }
 }
@@ -59,16 +59,17 @@ void parse_crawlchain(int &argc, char url[MAX_LENGTH][MAX_LINE],
 		char start[MAX_LENGTH][MAX_LINE], char end[MAX_LENGTH][MAX_LINE], 
 		char output_name[MAX_LENGTH]){
 
-    char garbage[MAX_LINE] = {};
-    char garby;
-
     std::ifstream crawlchain(CHAIN_PATH);
 
     if (!crawlchain.is_open()) {
         std::cerr << "Failed to open the file." << std::endl;
         return;
     }
-    // index 0 for redundency, for the case where a space is included accidentally or something
+
+    char garbage[MAX_LINE] = {};
+    char garby;
+
+  // index 0 for redundency, for the case where a space is included after char accidentally or something
     while(garbage[0] != OPEN_CHAIN){
         crawlchain.getline(garbage, MAX_LINE);
     } // find my initializer line
