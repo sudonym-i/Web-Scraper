@@ -16,6 +16,6 @@ find a start-tag that works.
 
 The featureset is currenrly rather bare, however it's still an effective tool.
 
-Currently, the data scraped from the specified websites will be saved to a file in the /build directory. The name can be changed in the "crawlchain.txt" file
+Currently, the data scraped from the specified websites will be saved to a file in the /build directory. The name can be changed in the "chain.txt" file
 
 ----------------------------------
